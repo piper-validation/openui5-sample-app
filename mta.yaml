@@ -1,0 +1,16 @@
+_schema-version: "2.0.0"
+ID: "ui5-sample-app"
+version: 1.0.0
+
+parameters:
+  hcp-deployer-version: "1.0.0"
+
+modules:
+  - name: "ui5-sample-app"
+    type: html5
+    path: .
+    parameters:
+      version: 1.0.0-${timestamp}
+    build-parameters:
+      builder: grunt
+      build-result: dist

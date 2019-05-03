@@ -1,0 +1,9 @@
+steps:
+  mtaBuild:
+    buildTarget: 'NEO'
+  neoDeploy:
+    deployMode: mta
+    neo:
+      credentialsId: 'neo_deploy'
+      account: 's7am47zded'
+      host: 'eu1.hana.ondemand.com'
