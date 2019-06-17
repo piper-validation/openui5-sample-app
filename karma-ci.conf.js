@@ -28,8 +28,27 @@ module.exports = function(config) {
 				}
 			}
 		},
+		// https://github.com/karma-runner/karma-junit-reporter#configuration
+		junitReporter: {
+			outputDir: "reports",
+			outputFile: "TEST-qunit.xml",
+			suite: "",
+			useBrowserName: true
+		},
+		customLaunchers: {
+			"RemoteChrome": {
+				base: "WebDriver",
+				config: {
+					hostname: "localhost",
+					port: 4444
+				},
+				browserName: "chrome",
+				name: "Karma",
+				pseudoActivityInterval: 30000
+			}
+		},
 
-		reporters: ["progress", "coverage"],
+		reporters: ["progress", "coverage", "junit"],
 
 		browsers: ["ChromeHeadless"],
 

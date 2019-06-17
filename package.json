@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ui5 serve",
     "lint": "eslint webapp",
-    "karma": "karma start",
+    "karma": "karma start karma-ci.conf.js --browsers RemoteChrome",
+    "karma-local": "karma start",
     "karma-ci": "karma start karma-ci.conf.js",
     "watch": "npm run karma",
     "test": "npm run lint && rimraf coverage && npm run karma-ci",
@@ -23,7 +24,9 @@
     "karma": "^4.0.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
+    "karma-junit-reporter": "^1.2.0",
     "karma-ui5": "^1.0.0",
+    "karma-webdriver-launcher": "^1.0.5",
     "rimraf": "^2.6.2"
   }
 }
