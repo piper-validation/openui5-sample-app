@@ -1,0 +1,12 @@
+jenkins:
+  numExecutors: 10
+unclassified:
+  globallibraries:
+    libraries:
+    - defaultVersion: "master"
+      name: "piper-lib-os"
+      retriever:
+        modernSCM:
+          scm:
+            git:
+              remote: "https://github.com/SAP/jenkins-library.git <https://github.com/SAP/jenkins-library.git> "
