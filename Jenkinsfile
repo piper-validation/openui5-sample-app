@@ -8,8 +8,7 @@ pipeline {
 			setupCommonPipelineEnvironment script: this
 		}
 		stage('Test'){
-			karmaExecuteTests script: this
-
+			karmaExecuteTests script: this, runCommand: 'npm run karma-ci'
 			archiveArtifacts '**/*'
 		}
 	}

@@ -1,5 +1,5 @@
 module.exports = function(config) {
-	"use strict";
+    "use strict";
 
 	require("./karma.conf")(config);
 	config.set({
@@ -34,12 +34,12 @@ module.exports = function(config) {
 			outputFile: "TEST-qunit.xml",
 			suite: "",
 			useBrowserName: true
-		},
+        },
 		customLaunchers: {
-			"RemoteChrome": {
+			"ChromeRemote": {
 				base: "WebDriver",
 				config: {
-					hostname: "localhost",
+                    hostname: "localhost",
 					port: 4444
 				},
 				browserName: "chrome",
@@ -50,9 +50,30 @@ module.exports = function(config) {
 
 		reporters: ["progress", "coverage", "junit"],
 
-		browsers: ["ChromeHeadless"],
+		browsers: ["ChromeRemote"],
 
 		singleRun: true
 
-	});
+    });
+
+    if (process.env.ON_K8S == true){
+        console.log("Running with Kubernetes setup.")
+    } else {
+        console.log("Running with Docker setup.")
+        config.set({
+            hostname: "karma",
+            customLaunchers: {
+                "ChromeRemote": {
+                    base: "WebDriver",
+                    config: {
+                        hostname: "selenium",
+                        port: 4444
+                    },
+                    browserName: "chrome",
+                    name: "Karma",
+                    pseudoActivityInterval: 30000
+                },
+            }
+        });
+    }
 };

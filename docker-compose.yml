@@ -1,0 +1,22 @@
+version: '3'
+services:
+  karma:
+    image: node:8-stretch
+    user: node
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
+    command:
+      - /bin/sh
+      - -c
+      - |
+          /usr/local/bin/npm install
+          /usr/local/bin/npm run karma-ci
+    depends_on:
+      - "selenium"
+  selenium:
+    image: selenium/standalone-chrome
+    ports:
+      - "4444:4444"
+    healthcheck:
+      test: "curl -sSL 'http://localhost:4444/wd/hub/status' 2>&1 | jq -r '.value.ready' 2>&1 | grep 'true' >/dev/null"
