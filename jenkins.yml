@@ -9,4 +9,4 @@ unclassified:
         modernSCM:
           scm:
             git:
-              remote: "https://github.com/SAP/jenkins-library.git <https://github.com/SAP/jenkins-library.git> "
+              remote: "https://github.com/SAP/jenkins-library.git"
