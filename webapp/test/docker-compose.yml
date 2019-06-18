@@ -5,7 +5,7 @@ services:
     user: node
     working_dir: /home/node/app
     volumes:
-      - .:/home/node/app
+      - ../..:/home/node/app
     command:
       - /bin/sh
       - -c

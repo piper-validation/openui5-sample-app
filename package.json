@@ -8,6 +8,7 @@
     "lint": "eslint webapp",
     "karma": "karma start",
     "karma-ci": "karma start karma-ci.conf.js",
+    "karma-compose": "docker-compose --file webapp/test/docker-compose.yml up",
     "watch": "npm run karma",
     "test": "npm run lint && rimraf coverage && npm run karma-ci",
     "build": "rimraf dist && ui5 build --a"
