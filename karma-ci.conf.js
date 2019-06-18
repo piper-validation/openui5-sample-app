@@ -60,20 +60,7 @@ module.exports = function(config) {
         console.log("Running with Kubernetes setup.")
     } else {
         console.log("Running with Docker setup.")
-        config.set({
-            hostname: "karma",
-            customLaunchers: {
-                "ChromeRemote": {
-                    base: "WebDriver",
-                    config: {
-                        hostname: "selenium",
-                        port: 4444
-                    },
-                    browserName: "chrome",
-                    name: "Karma",
-                    pseudoActivityInterval: 30000
-                },
-            }
-        });
+        config.hostname = 'karma'
+        config.customLaunchers.ChromeRemote.config.hostname = 'selenium'
     }
 };
