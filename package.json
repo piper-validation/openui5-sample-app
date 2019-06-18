@@ -11,7 +11,8 @@
     "karma-compose": "docker-compose --file webapp/test/docker-compose.yml up --abort-on-container-exit",
     "watch": "npm run karma",
     "test": "npm run lint && rimraf coverage && npm run karma-ci",
-    "build": "rimraf dist && ui5 build --a"
+    "build": "rimraf dist && ui5 build --a",
+    "jenkinsfile": "docker run --rm -v /tmp -v /var/run/docker.sock:/var/run/docker.sock -v $(pwd):/workspace -e CASC_JENKINS_CONFIG=/workspace/jenkins.yml ppiper/jenkinsfile-runner"
   },
   "dependencies": {
     "@openui5/sap.m": "^1.60.0",
