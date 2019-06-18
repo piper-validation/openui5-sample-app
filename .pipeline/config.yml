@@ -1,0 +1,6 @@
+steps:
+  dockerExecute:
+    dockerPullImage: false
+    sidecarPullImage: false
+  karmaExecuteTests:
+    runCommand: 'npm run karma-ci'
