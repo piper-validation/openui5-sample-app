@@ -1,7 +1,6 @@
 steps:
   mtaBuild:
     buildTarget: 'NEO'
-    mtaBuildTool: 'classic'
   neoDeploy:
     deployMode: mta
     neo:
