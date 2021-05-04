@@ -8,9 +8,10 @@ parameters:
 modules:
   - name: "ui5-sample-app"
     type: html5
-    path: .
+    path: webapp
     parameters:
       version: 1.0.0-${timestamp}
     build-parameters:
-      builder: grunt
+      supported-platforms: [NEO]
+			builder: grunt
       build-result: dist
