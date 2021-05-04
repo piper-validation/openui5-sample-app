@@ -13,5 +13,5 @@ modules:
       version: 1.0.0-${timestamp}
     build-parameters:
       supported-platforms: [NEO]
-			builder: grunt
+      builder: grunt
       build-result: dist
